@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grade Analysis - Student Performance</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Student Dashboard</h2>
+        </div>
+
+        <div class="profile">
+            <img src="images/profile.jpg" alt="Student">
+            <h3>Aditya Acharya</h3>
+            <p>24BCE5040</p>
+        </div>
+
+        <nav class="menu">
+            <a href="index.html">Dashboard</a>
+            <a href="grades.html" class="active">Grade Analysis</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="hackathon.html">Hackathon Impact</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="skillgap.html">Skill Gap</a>
+            <a href="career.html">Career Recommendation</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <div class="top-left">
+                <h1>Grade Analysis</h1>
+                <p>Detailed academic performance breakdown</p>
+            </div>
+
+            <div class="top-right">
+                <div class="icon">🔔</div>
+                <div class="icon">🌙</div>
+                <button class="primary-btn">Logout</button>
+            </div>
+        </header>
+
+        <!-- ANALYSIS GRID -->
+        <section class="dashboard">
+
+            <!-- SEMESTER GPA -->
+            <div class="card large">
+                <h2>Semester-wise GPA</h2>
+                <table class="analysis-table">
+                    <tr>
+                        <th>Semester</th>
+                        <th>GPA</th>
+                    </tr>
+                    <tr>
+                        <td>Semester 1</td>
+                        <td>7.8</td>
+                    </tr>
+                    <tr>
+                        <td>Semester 2</td>
+                        <td>8.0</td>
+                    </tr>
+                    <tr>
+                        <td>Semester 3</td>
+                        <td>8.5</td>
+                    </tr>
+                    <tr>
+                        <td>Semester 4</td>
+                        <td>8.7</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- SUBJECT MARKS -->
+            <div class="card large">
+                <h2>Subject-wise Marks</h2>
+                <table class="analysis-table">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                        <th>Grade</th>
+                    </tr>
+                    <tr>
+                        <td>Data Structures</td>
+                        <td>92</td>
+                        <td>A+</td>
+                    </tr>
+                    <tr>
+                        <td>Web Technologies</td>
+                        <td>89</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>Operating Systems</td>
+                        <td>65</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>Computer Networks</td>
+                        <td>70</td>
+                        <td>B</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- PERFORMANCE TREND -->
+            <div class="card">
+                <h2>Performance Trend</h2>
+                <p>Trend visualization will be added later.</p>
+            </div>
+
+            <!-- BEST SUBJECT -->
+            <div class="card">
+                <h2>Best Performing Subject</h2>
+                <p><strong>Data Structures</strong> – 92 Marks</p>
+            </div>
+
+            <!-- LOWEST SUBJECT -->
+            <div class="card">
+                <h2>Lowest Performing Subject</h2>
+                <p><strong>Operating Systems</strong> – 65 Marks</p>
+            </div>
+
+            <!-- GRADE DISTRIBUTION -->
+            <div class="card">
+                <h2>Grade Distribution</h2>
+                <p>Pie chart will be implemented later.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

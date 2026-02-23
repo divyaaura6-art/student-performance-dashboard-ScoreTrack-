@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hackathon Impact - Student Performance</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .hackathon-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .hackathon-grid .large {
+            grid-column: span 2;
+        }
+
+        .certificate-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .certificate-gallery img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.2);
+            margin: 5px 5px 0 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Student Dashboard</h2>
+        </div>
+
+        <div class="profile">
+            <img src="images/profile.jpg" alt="Student">
+            <h3>Aditya Acharya</h3>
+            <p>24BCE5040</p>
+        </div>
+
+        <nav class="menu">
+            <a href="index.html">Dashboard</a>
+            <a href="grades.html">Grade Analysis</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="hackathon.html" class="active">Hackathon Impact</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="skillgap.html">Skill Gap</a>
+            <a href="career.html">Career Recommendation</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <div class="top-left">
+                <h1>Hackathon Impact</h1>
+                <p>Track participation, achievements and skill growth</p>
+            </div>
+
+            <div class="top-right">
+                <div class="icon">🔔</div>
+                <div class="icon">🌙</div>
+                <button class="primary-btn">Logout</button>
+            </div>
+        </header>
+
+        <!-- GRID -->
+        <section class="dashboard hackathon-grid">
+
+            <!-- HACKATHONS PARTICIPATED -->
+            <div class="card large">
+                <h2>Hackathons Participated</h2>
+                <ul>
+                    <li>Smart India Hackathon 2024</li>
+                    <li>AI Innovation Challenge</li>
+                    <li>National Web Development Hackathon</li>
+                </ul>
+            </div>
+
+            <!-- POSITIONS WON -->
+            <div class="card">
+                <h2>Positions Won</h2>
+                <p>🥇 1st Place - AI Innovation Challenge</p>
+                <p>🥈 2nd Place - Web Development Hackathon</p>
+            </div>
+
+            <!-- SKILL IMPROVEMENT -->
+            <div class="card">
+                <h2>Skill Improvement</h2>
+                <span class="tag">Team Collaboration</span>
+                <span class="tag">Problem Solving</span>
+                <span class="tag">UI/UX Design</span>
+                <span class="tag">Backend Integration</span>
+                <span class="tag">Presentation Skills</span>
+            </div>
+
+            <!-- ACADEMIC IMPACT -->
+            <div class="card large">
+                <h2>Academic Impact</h2>
+                <p>
+                    Participation in hackathons has improved real-world application 
+                    of academic concepts such as Data Structures, Web Technologies, 
+                    and Machine Learning. Collaborative project building enhanced 
+                    coding efficiency and problem-solving speed, positively influencing 
+                    subject performance.
+                </p>
+            </div>
+
+            <!-- CERTIFICATE GALLERY -->
+            <div class="card large">
+                <h2>Certificates Gallery</h2>
+
+                <div class="certificate-gallery">
+                    <img src="images/certificate1.jpg" alt="Certificate 1">
+                    <img src="images/certificate2.jpg" alt="Certificate 2">
+                    <img src="images/certificate3.jpg" alt="Certificate 3">
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

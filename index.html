@@ -2,7 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Student Performance Dashboard</title>
+    <title>Dashboard - Student Performance</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,6 +16,7 @@
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
+
         <div class="logo">
             <h2>Student Dashboard</h2>
         </div>
@@ -22,57 +28,97 @@
         </div>
 
         <nav class="menu">
-            <a class="active">Dashboard</a>
-            <a>Grade Analysis</a>
-            <a>Attendance Analysis</a>
-            <a>Hackathon Impact</a>
-            <a>Certifications</a>
-            <a>Skill Gap</a>
-            <a>Career Recommendation</a>
-            <a>Settings</a>
+            <a href="index.html" class="active">Dashboard</a>
+            <a href="grades.html">Grade Analysis</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="hackathon.html">Hackathon Impact</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="skillgap.html">Skill Gap</a>
+            <a href="career.html">Career Recommendation</a>
+            <a href="settings.html">Settings</a>
         </nav>
+
     </aside>
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
 
-        <!-- TOP BAR -->
+        <!-- TOPBAR -->
         <header class="topbar">
-
-              <div class="top-left">
+            <div class="top-left">
                 <h1>Dashboard</h1>
-                <p>Welcome back, Aditya 👋</p>
+                <p>Overview of academic performance</p>
             </div>
 
-    <div class="top-right">
-        <div class="icon">🔍</div>
-        <div class="icon">🔔</div>
-        <div class="icon">🌙</div>
-        <button class="primary-btn">Logout</button>
-    </div>
-
-</header>
+            <div class="top-right">
+                <div class="icon">🔔</div>
+                <div class="icon">🌙</div>
+                <button class="primary-btn">Logout</button>
+            </div>
+        </header>
 
         <!-- DASHBOARD GRID -->
         <section class="dashboard">
 
             <!-- STAT CARDS -->
-            <div class="card">Average GPA</div>
-            <div class="card">Total Credits</div>
-            <div class="card">Certifications</div>
+            <div class="card stat-card">
+                <h3>Average GPA</h3>
+                <h2>8.7</h2>
+                <p>Score out of 10</p>
+            </div>
 
-            <!-- SEMESTER PERFORMANCE -->
-            <div class="card large">Semester Performance Chart</div>
+            <div class="card stat-card">
+                <h3>Total Credits</h3>
+                <h2>80 / 100</h2>
+                <div class="progress-bar">
+                    <div class="progress" style="width:80%;"></div>
+                </div>
+            </div>
 
-            <!-- CAREER SUGGESTION -->
-            <div class="card side">Career Suggestions</div>
+            <div class="card stat-card">
+                <h3>Certifications</h3>
+                <h2>4</h2>
+                <p>AI • Web • Cloud • ML</p>
+            </div>
 
-            <!-- WEAK / STRONG -->
-            <div class="card">Weakest Subjects</div>
-            <div class="card">Strongest Subjects</div>
+            <!-- SEMESTER SUMMARY -->
+            <div class="card large">
+                <h3>Semester Performance Overview</h3>
+                <p>Detailed GPA trends and subject analytics available in Grade Analysis page.</p>
+            </div>
+
+            <!-- CAREER PREVIEW -->
+            <div class="card side">
+                <h3>Career Recommendation</h3>
+                <h2>Data Analyst</h2>
+                <p>Based on analytical subject strengths and certification alignment.</p>
+                <button class="primary-btn">View Details</button>
+            </div>
+
+            <!-- STRONGEST -->
+            <div class="card">
+                <h3>Strongest Subjects</h3>
+                <ul>
+                    <li>Data Structures</li>
+                    <li>Web Technologies</li>
+                </ul>
+            </div>
+
+            <!-- WEAKEST -->
+            <div class="card">
+                <h3>Weakest Subjects</h3>
+                <ul>
+                    <li>Operating Systems</li>
+                    <li>Computer Networks</li>
+                </ul>
+            </div>
 
             <!-- SCHEDULE -->
-            <div class="card">Upcoming Schedule</div>
+            <div class="card">
+                <h3>Upcoming Schedule</h3>
+                <p>📅 Web Tech Assignment – 25 Feb</p>
+                <p>📅 Hackathon – 1 March</p>
+            </div>
 
         </section>
 
@@ -80,6 +126,5 @@
 
 </div>
 
-<script src="js/script.js"></script>
 </body>
 </html>

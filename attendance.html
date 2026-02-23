@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Analysis - Student Performance</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Student Dashboard</h2>
+        </div>
+
+        <div class="profile">
+            <img src="images/profile.jpg" alt="Student">
+            <h3>Aditya Acharya</h3>
+            <p>24BCE5040</p>
+        </div>
+
+        <nav class="menu">
+            <a href="index.html">Dashboard</a>
+            <a href="grades.html">Grade Analysis</a>
+            <a href="attendance.html" class="active">Attendance</a>
+            <a href="hackathon.html">Hackathon Impact</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="skillgap.html">Skill Gap</a>
+            <a href="career.html">Career Recommendation</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <div class="top-left">
+                <h1>Attendance Analysis</h1>
+                <p>Monitor attendance and its impact on performance</p>
+            </div>
+
+            <div class="top-right">
+                <div class="icon">🔔</div>
+                <div class="icon">🌙</div>
+                <button class="primary-btn">Logout</button>
+            </div>
+        </header>
+
+        <!-- GRID -->
+        <section class="dashboard attendance-grid">
+
+            <!-- OVERALL GAUGE -->
+            <div class="card">
+                <h2>Overall Attendance</h2>
+                <canvas id="overallGauge"></canvas>
+            </div>
+
+            <!-- SUBJECT GAUGE -->
+            <div class="card">
+                <h2>Subject Attendance</h2>
+
+                <select id="subjectSelect" class="dropdown">
+                    <option value="92">Data Structures - 92%</option>
+                    <option value="88">Web Technologies - 88%</option>
+                    <option value="62">Operating Systems - 62%</option>
+                    <option value="75">Computer Networks - 75%</option>
+                </select>
+
+                <canvas id="subjectGauge"></canvas>
+                <p id="attendanceWarning"></p>
+            </div>
+
+            <!-- TABLE -->
+            <div class="card large">
+                <h2>Subject-wise Attendance</h2>
+                <table class="analysis-table">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Attendance (%)</th>
+                    </tr>
+                    <tr><td>Data Structures</td><td>92%</td></tr>
+                    <tr><td>Web Technologies</td><td>88%</td></tr>
+                    <tr><td>Operating Systems</td><td>62%</td></tr>
+                    <tr><td>Computer Networks</td><td>75%</td></tr>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Link External JS -->
+<script src="js/attendance.js"></script>
+
+</body>
+</html>
