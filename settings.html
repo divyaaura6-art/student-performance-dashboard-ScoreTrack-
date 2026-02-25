@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings - Student Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Student Dashboard</h2>
+        </div>
+
+        <div class="profile">
+            <img src="images/profile.jpg" alt="Student">
+            <h3>Aditya Acharya</h3>
+            <p>24BCE5040</p>
+        </div>
+
+        <nav class="menu">
+            <a href="index.html">Dashboard</a>
+            <a href="grades.html">Grade Analysis</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="hackathon.html">Hackathon Impact</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="skillgap.html">Skill Gap</a>
+            <a href="career.html">Career Recommendation</a>
+            <a href="settings.html" class="active">Settings</a>
+        </nav>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <div class="top-left">
+                <h1>Settings</h1>
+                <p>Manage profile and dashboard preferences</p>
+            </div>
+
+            <div class="top-right">
+                <div class="icon">🔔</div>
+                <div class="icon">🌙</div>
+                <button class="primary-btn">Logout</button>
+            </div>
+        </header>
+
+        <!-- SETTINGS GRID -->
+        <section class="dashboard settings-grid">
+
+            <!-- PROFILE SECTION -->
+            <div class="card large">
+                <h2>Profile Information</h2>
+
+                <form>
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" value="Aditya Acharya">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Register Number</label>
+                        <input type="text" value="24BCE5040">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" value="student@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Department</label>
+                        <input type="text" value="Computer Science and Engineering">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Current Semester</label>
+                        <select>
+                            <option>Semester 1</option>
+                            <option>Semester 2</option>
+                            <option>Semester 3</option>
+                            <option selected>Semester 4</option>
+                            <option>Semester 5</option>
+                            <option>Semester 6</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="primary-btn">Save Changes</button>
+
+                </form>
+            </div>
+
+            <!-- THEME SETTINGS -->
+            <div class="card">
+                <h2>Theme Preferences</h2>
+
+                <div class="theme-option">
+                    <input type="radio" name="theme" checked>
+                    <label>Purple Gradient (Default)</label>
+                </div>
+
+                <div class="theme-option">
+                    <input type="radio" name="theme">
+                    <label>Dark Mode</label>
+                </div>
+
+                <div class="theme-option">
+                    <input type="radio" name="theme">
+                    <label>Light Mode</label>
+                </div>
+            </div>
+
+            <!-- DATA RESET -->
+            <div class="card">
+                <h2>Data Management</h2>
+                <p>
+                    Reset all dashboard analytics and stored performance data.
+                </p>
+                <button class="danger-btn">Reset Data</button>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

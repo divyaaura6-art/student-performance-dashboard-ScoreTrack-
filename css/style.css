@@ -316,3 +316,53 @@ body {
     font-weight: 600;
     color: white;
 }
+
+/* Settings Grid */
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.settings-grid .large {
+    grid-column: span 2;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* Theme Options */
+.theme-option {
+    margin-bottom: 10px;
+}
+
+/* Danger Button */
+.danger-btn {
+    background: #ff5252;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.danger-btn:hover {
+    background: #ff2e2e;
+}
