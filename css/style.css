@@ -366,3 +366,7 @@ body {
 .danger-btn:hover {
     background: #ff2e2e;
 }
+#num {
+    color: white;
+    font-size: large;
+}
