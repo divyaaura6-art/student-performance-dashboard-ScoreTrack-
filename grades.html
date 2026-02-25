@@ -86,7 +86,7 @@
             <div class="card">
                 <h2>Current CGPA</h2>
 
-                <h1 style="font-size:48px; margin:15px 0;">8.7</h1>
+                <h1 id="cgpa" style="font-size:48px; margin:15px 0;">0.00</h1>
                 <p>Overall cumulative performance across all semesters</p>
 
                 <div class="progress-bar">
@@ -153,6 +153,25 @@
     </main>
 
 </div>
+<script>
+const cgpaElement = document.getElementById("cgpa");
+const target = 8.25;
+const duration = 1500;
+let start = null;
 
+function animate(timestamp) {
+    if (!start) start = timestamp;
+    const progress = timestamp - start;
+    const value = Math.min((progress / duration) * target, target);
+    
+    cgpaElement.textContent = value.toFixed(2);
+
+    if (progress < duration) {
+        requestAnimationFrame(animate);
+    }
+}
+
+requestAnimationFrame(animate);
+</script>
 </body>
 </html>
