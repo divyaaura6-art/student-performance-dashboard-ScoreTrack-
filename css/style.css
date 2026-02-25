@@ -365,4 +365,11 @@ body {
 
 .danger-btn:hover {
     background: #ff2e2e;
+<<<<<<< HEAD
+=======
+}
+#num {
+    color: white;
+    font-size: large;
+>>>>>>> 48de8d44d2763376e13d418350bc320d874cfa81
 }
