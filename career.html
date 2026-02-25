@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Career Recommendation</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+    /* RESET */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    /* BACKGROUND */
+    body {
+        min-height: 100vh;
+        background: linear-gradient(
+            135deg,
+            #1a1333 0%,
+            #3c2f8f 50%,
+            #c9b6ff 100%
+        );
+    }
+
+    .container {
+        display: flex;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        width: 260px;
+        min-height: 100vh;
+        padding: 30px 20px;
+        background: rgba(15, 12, 41, 0.85);
+        backdrop-filter: blur(10px);
+        color: white;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo h2 {
+        margin-bottom: 30px;
+    }
+
+    .profile {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .profile img {
+        width: 80px;
+        border-radius: 50%;
+        border: 3px solid #7c5cfc;
+        margin-bottom: 10px;
+    }
+
+    .profile p {
+        opacity: 0.7;
+    }
+
+    .menu a {
+        display: block;
+        padding: 12px 15px;
+        margin: 8px 0;
+        border-radius: 10px;
+        text-decoration: none;
+        color: white;
+        transition: 0.3s;
+    }
+
+    .menu a.active,
+    .menu a:hover {
+        background: linear-gradient(90deg, #6c63ff, #8b7cff);
+    }
+
+    /* MAIN CONTENT */
+    .main-content {
+        flex: 1;
+        padding: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* TOPBAR */
+    .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        color: white;
+        margin-bottom: 30px;
+    }
+
+    .top-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .icon {
+        font-size: 18px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .icon:hover {
+        transform: scale(1.1);
+    }
+
+    .primary-btn {
+        background: linear-gradient(90deg, #6c63ff, #8b7cff);
+        border: none;
+        padding: 8px 18px;
+        border-radius: 20px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .primary-btn:hover {
+        box-shadow: 0 4px 15px rgba(108, 99, 255, 0.5);
+    }
+
+    /* VERTICAL DASHBOARD */
+    .dashboard {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    /* GLASS CARD */
+    .card {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(15px);
+        padding: 30px;
+        border-radius: 20px;
+        color: #fff;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card h3 {
+        margin-bottom: 15px;
+    }
+
+    .card p {
+        opacity: 0.85;
+        margin-bottom: 10px;
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 8px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .progress {
+        height: 100%;
+        background: linear-gradient(90deg, #6c63ff, #8b7cff);
+        border-radius: 10px;
+    }
+
+    ul {
+        padding-left: 20px;
+        opacity: 0.9;
+    }
+
+    ul li {
+        margin-bottom: 8px;
+    }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Student Dashboard</h2>
+        </div>
+
+        <div class="profile">
+            <img src="images/profile.avif" alt="Student">
+            <h3>Anita Sharma</h3>
+            <p>24BCE5040</p>
+        </div>
+
+        <nav class="menu">
+            <a href="index.html">Dashboard</a>
+            <a href="grades.html">Grade Analysis</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="hackathon.html">Hackathon Impact</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="skillgap.html">Skill Gap</a>
+            <a href="career.html" class="active">Career Recommendation</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Career Recommendation</h1>
+                <p>AI-powered suggestion based on academic performance</p>
+            </div>
+
+            <div class="top-right">
+                <div class="icon">🔔</div>
+                <div class="icon">🌙</div>
+                <button class="primary-btn">Logout</button>
+            </div>
+        </header>
+
+        <section class="dashboard">
+
+            <div class="card">
+                <h3>Primary Career Path</h3>
+                <h2 style="font-size:32px; margin-bottom:10px;">Data Analyst</h2>
+                <p>Strong analytical GPA and certification alignment in AI & ML indicate high potential in data-driven roles.</p>
+                <button class="primary-btn">Explore Roadmap</button>
+            </div>
+
+            <div class="card">
+                <h3>Career Match Score</h3>
+                <h2>92%</h2>
+                <div class="progress-bar">
+                    <div class="progress" style="width:92%;"></div>
+                </div>
+                <p>Calculated from GPA + Skill Strength + Certifications</p>
+            </div>
+
+            <div class="card">
+                <h3>Alternative Career Options</h3>
+                <ul>
+                    <li>Business Intelligence Analyst</li>
+                    <li>Data Scientist</li>
+                    <li>Product Analyst</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Required Skills</h3>
+                <ul>
+                    <li>SQL & Databases</li>
+                    <li>Python / R</li>
+                    <li>Statistics & Probability</li>
+                    <li>Power BI / Tableau</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Skill Gap Analysis</h3>
+
+                <p>Machine Learning</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width:60%;"></div>
+                </div>
+
+                <p>Advanced SQL</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width:75%;"></div>
+                </div>
+
+                <button class="primary-btn">Improve Skills</button>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

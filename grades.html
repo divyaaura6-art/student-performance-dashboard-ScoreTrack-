@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <title>Grade Analysis - Student Performance</title>
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -22,7 +19,7 @@
         </div>
 
         <div class="profile">
-            <img src="images/profile.jpg" alt="Student">
+            <img src="images/profile.avif" alt="Student">
             <h3>Aditya Acharya</h3>
             <p>24BCE5040</p>
         </div>
@@ -43,7 +40,6 @@
     <!-- MAIN CONTENT -->
     <main class="main-content">
 
-        <!-- TOPBAR -->
         <header class="topbar">
             <div class="top-left">
                 <h1>Grade Analysis</h1>
@@ -57,11 +53,10 @@
             </div>
         </header>
 
-        <!-- ANALYSIS GRID -->
         <section class="dashboard">
 
             <!-- SEMESTER GPA -->
-            <div class="card large">
+            <div class="card">
                 <h2>Semester-wise GPA</h2>
                 <table class="analysis-table">
                     <tr>
@@ -87,8 +82,22 @@
                 </table>
             </div>
 
+            <!-- NEW CGPA BOX -->
+            <div class="card">
+                <h2>Current CGPA</h2>
+
+                <h1 style="font-size:48px; margin:15px 0;">8.7</h1>
+                <p>Overall cumulative performance across all semesters</p>
+
+                <div class="progress-bar">
+                    <div class="progress" style="width:82.5%;"></div>
+                </div>
+
+                <p style="margin-top:10px; opacity:0.7;">82.5% Academic Performance Level</p>
+            </div>
+
             <!-- SUBJECT MARKS -->
-            <div class="card large">
+            <div class="card">
                 <h2>Subject-wise Marks</h2>
                 <table class="analysis-table">
                     <tr>
@@ -119,25 +128,21 @@
                 </table>
             </div>
 
-            <!-- PERFORMANCE TREND -->
             <div class="card">
                 <h2>Performance Trend</h2>
                 <p>Trend visualization will be added later.</p>
             </div>
 
-            <!-- BEST SUBJECT -->
             <div class="card">
                 <h2>Best Performing Subject</h2>
                 <p><strong>Data Structures</strong> – 92 Marks</p>
             </div>
 
-            <!-- LOWEST SUBJECT -->
             <div class="card">
                 <h2>Lowest Performing Subject</h2>
                 <p><strong>Operating Systems</strong> – 65 Marks</p>
             </div>
 
-            <!-- GRADE DISTRIBUTION -->
             <div class="card">
                 <h2>Grade Distribution</h2>
                 <p>Pie chart will be implemented later.</p>
