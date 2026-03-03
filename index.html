@@ -28,14 +28,14 @@
         </div>
 
         <nav class="menu">
-            <a href="index.html" class="active">Dashboard</a>
-            <a href="grades.html">Grade Analysis</a>
-            <a href="attendance.html">Attendance</a>
-            <a href="hackathon.html">Hackathon Impact</a>
-            <a href="certifications.html">Certifications</a>
-            <a href="skillgap.html">Skill Gap</a>
-            <a href="career.html">Career Recommendation</a>
-            <a href="settings.html">Settings</a>
+            <button onclick="openNewTab()">Dashboard</button>
+            <button onclick="openNewTab1()">Grade Analysis</button>
+            <button onclick="openNewTab2()">Attendance</button>
+            <button onclick="openNewTab3()">Hackathon Impact</button>
+            <button onclick="openNewTab4()">Certifications</button>
+            <button onclick="openNewTab5()">Skill Gap</button>
+            <button onclick="openNewTab6()">Career Recommendation</button>
+            <button onclick="openNewTab7()">Settings</button>
         </nav>
 
     </aside>
@@ -125,6 +125,31 @@
     </main>
 
 </div>
-
+<script>
+function openNewTab1() {
+    window.open("grades.html", "_blank");
+}
+function openNewTab2() {
+    window.open("attendance.html", "_blank");
+}
+function openNewTab3() {
+    window.open("hackathon.html", "_blank");
+}
+function openNewTab4() {
+    window.open("certifications.html", "_blank");
+}
+function openNewTab5() {
+    window.open("skillgap.html", "_blank");
+}
+function openNewTab6() {
+    window.open("career.html", "_blank");
+}
+function openNewTab7() {
+    window.open("settings.html", "_blank");
+}
+function openNewTab() {
+    window.open("index.html", "_blank");
+}
+</script>
 </body>
 </html>

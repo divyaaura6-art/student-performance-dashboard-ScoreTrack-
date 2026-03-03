@@ -30,6 +30,7 @@ body {
 
     background: rgba(15, 12, 41, 0.85);
     backdrop-filter: blur(10px);
+    perspective: 800px;
 
     color: white;
 
@@ -69,6 +70,38 @@ body {
 .menu a.active,
 .menu a:hover {
     background: linear-gradient(90deg, #6c63ff, #8b7cff);
+}
+
+.menu button {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+
+    text-align: left;
+    font-size: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+/* Hover Effect */
+.menu button:hover {
+    background: linear-gradient(90deg, #6c63ff, #8b7cff);
+    transform: translateZ(15px) scale(1.05);
+    box-shadow: 0 20px 35px rgba(108, 99, 255, 0.4);
+}
+
+/* Active Button (optional) */
+.menu button.active {
+    background: linear-gradient(90deg, #6c63ff, #8b7cff);
+    box-shadow: 0 4px 15px rgba(108, 99, 255, 0.5);
 }
 
 /* MAIN CONTENT */
@@ -207,7 +240,6 @@ body {
     height: 8px;
     background: rgba(255,255,255,0.2);
     border-radius: 10px;
-    overflow: hidden;
     margin-top: 10px;
 }
 
@@ -365,11 +397,8 @@ body {
 
 .danger-btn:hover {
     background: #ff2e2e;
-<<<<<<< HEAD
-=======
 }
 #num {
     color: white;
     font-size: large;
->>>>>>> 48de8d44d2763376e13d418350bc320d874cfa81
 }
