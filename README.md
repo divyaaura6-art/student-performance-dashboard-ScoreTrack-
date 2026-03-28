@@ -6,8 +6,8 @@ Semester: IV
 Academic Year: 2025-2026  
 
 ## Team Members
-- 24BCE5040 – UI Design & Layout
-- 24BCE5220 – JavaScript Logic & Calculations
+- 24BCE5040 – Advika Suresh
+- 24BCE5220 – Divya Dharshini
 
 ## Project Objective
 This dashboard analyzes student academic performance including GPA, attendance, certifications, skill gap, and career recommendation.
