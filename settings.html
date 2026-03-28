@@ -8,35 +8,32 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<script src="javascript/script.js"></script>
 <div class="container">
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
+    <div class="logo">
+        <h2>Student Dashboard</h2>
+    </div>
 
-        <div class="logo">
-            <h2>Score Track</h2>
-        </div>
+    <div class="profile">
+        <img src="images/profile.avif" alt="Student">
+        <h3>Anita Sharma</h3>
+        <p>24BCE5040</p>
+    </div>
 
-        <div class="profile">
-            <img src="images/profile.avif" alt="Student">
-            <h3>Aditya Acharya</h3>
-            <p>24BCE5040</p>
-        </div>
-
-        <nav class="menu">
-            <a href="index.html">Dashboard</a>
-            <a href="grades.html">Grade Analysis</a>
-            <a href="attendance.html">Attendance</a>
-            <a href="hackathon.html">Hackathon Impact</a>
-            <a href="certifications.html">Certifications</a>
-            <a href="skillgap.html">Skill Gap</a>
-            <a href="career.html">Career Recommendation</a>
-            <a href="settings.html" class="active">Settings</a>
-        </nav>
-
-    </aside>
-
+    <nav class="menu">
+        <button onclick="openNewTab()">Dashboard</button>
+        <button onclick="openNewTab1()">Grade Analysis</button>
+        <button onclick="openNewTab2()">Attendance</button>
+        <button onclick="openNewTab3()">Hackathon Impact</button>
+        <button onclick="openNewTab4()">Certifications</button>
+        <button onclick="openNewTab5()">Skill Gap</button>
+        <button onclick="openNewTab6()">Career Recommendation</button>
+        <button onclick="openNewTab7()">Settings</button>
+    </nav>
+</aside>
     <!-- MAIN CONTENT -->
     <main class="main-content">
 
