@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skill Gap Analysis</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Student Dashboard</h2>
+        </div>
+
+        <div class="profile">
+            <img src="images/profile.avif">
+            <h3>Anita Sharma</h3>
+            <p>24BCE5040</p>
+        </div>
+
+        <nav class="menu">
+            <button onclick="openNewTab()">Dashboard</button>
+            <button onclick="openNewTab1()">Grade Analysis</button>
+            <button onclick="openNewTab2()">Attendance</button>
+            <button onclick="openNewTab3()">Hackathon Impact</button>
+            <button onclick="openNewTab4()">Certifications</button>
+            <button class="active">Skill Gap</button>
+            <button onclick="openNewTab6()">Career Recommendation</button>
+            <button onclick="openNewTab7()">Settings</button>
+        </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <div class="top-left">
+                <h1>Skill Gap Analysis</h1>
+                <p>Compare your current skills with industry requirements</p>
+            </div>
+
+            <div class="top-right">
+                <div class="icon">📊</div>
+                <button class="primary-btn">Upgrade Plan</button>
+            </div>
+        </header>
+
+        <!-- SKILL GRID -->
+        <section class="dashboard">
+
+            <!-- SKILL 1 -->
+            <div class="card">
+                <h3>Data Structures</h3>
+                <p>Current Level: 75%</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width:75%"></div>
+                </div>
+
+                <p>Required Level: 90%</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width:90%"></div>
+                </div>
+
+                <p>Gap: 15%</p>
+            </div>
+
+            <!-- SKILL 2 -->
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>Current Level: 80%</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width:80%"></div>
+                </div>
+
+                <p>Required Level: 85%</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width:85%"></div>
+                </div>
+
+                <p>Gap: 5%</p>
+            </div>
+
+            <!-- SKILL 3 -->
+            <div class="card">
+                <h3>Machine Learning</h3>
+                <p>Current Level: 50%</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width:50%"></div>
+                </div>
+
+                <p>Required Level: 80%</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width:80%"></div>
+                </div>
+
+                <p>Gap: 30%</p>
+            </div>
+
+            <!-- SKILL 4 -->
+            <div class="card">
+                <h3>Cloud Computing</h3>
+                <p>Current Level: 60%</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width:60%"></div>
+                </div>
+
+                <p>Required Level: 85%</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width:85%"></div>
+                </div>
+
+                <p>Gap: 25%</p>
+            </div>
+
+            <!-- RECOMMENDATIONS -->
+            <div class="card large">
+                <h3>Recommended Actions</h3>
+
+                <ul>
+                    <li>📘 Practice advanced DSA problems (LeetCode / HackerRank)</li>
+                    <li>🌐 Build 2 full-stack projects (React + Node.js)</li>
+                    <li>☁️ Complete AWS / Azure certification</li>
+                    <li>🤖 Take ML course (Scikit-learn + projects)</li>
+                    <li>🏆 Participate in hackathons for real-world exposure</li>
+                </ul>
+            </div>
+
+            <!-- PRIORITY CARD -->
+            <div class="card side">
+                <h3>Priority Focus</h3>
+                <h2>Machine Learning</h2>
+                <p>Largest gap detected (30%). Recommended immediate attention.</p>
+
+                <button class="primary-btn">Start Learning</button>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="javascript/script.js"></script>
+</body>
+</html>

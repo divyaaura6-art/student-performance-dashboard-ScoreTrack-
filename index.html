@@ -50,6 +50,7 @@
                 <div class="icon">🔔</div>
                 <div class="icon">🌙</div>
                 <button class="primary-btn">Logout</button>
+                <button id="themeToggle" class="primary-btn">Toggle Theme</button>
             </div>
         </header>
 
@@ -102,7 +103,7 @@
 
             <!-- WEAKEST -->
             <div class="card">
-                <h3>Weakest Subjects</h3>
+                <h3>Subjects that need improvement</h3>
                 <ul>
                     <li>Operating Systems</li>
                     <li>Computer Networks</li>
@@ -121,5 +122,42 @@
     </main>
 
 </div>
+<script>
+    const toggleBtn = document.getElementById("themeToggle");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-theme");
+}
+
+toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light-theme");
+
+    // Save preference
+    if (document.body.classList.contains("light-theme")) {
+        localStorage.setItem("theme", "light");
+    } else {
+        localStorage.setItem("theme", "dark");
+    }
+});
+function updateButton() {
+    if (document.body.classList.contains("light-theme")) {
+        toggleBtn.innerText = "Calm Mode 🌙";
+    } else {
+        toggleBtn.innerText = "Energetic Mode ⚡";
+    }
+}
+
+updateButton();
+
+toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light-theme");
+    localStorage.setItem(
+        "theme",
+        document.body.classList.contains("light-theme") ? "light" : "dark"
+    );
+    updateButton();
+});
+</script>
 </body>
 </html>
