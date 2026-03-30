@@ -524,3 +524,60 @@ body.light-theme .profile p {
 body.light-theme .card:hover {
     box-shadow: 0 12px 30px rgba(59, 130, 246, 0.15);
 }
+/* Better spacing for stats */
+.stats-row {
+    margin-bottom: 30px;
+}
+
+/* Main layout split */
+.attendance-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 25px;
+}
+
+/* Left column (insights + warning) */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Right column (table) */
+.right-column {
+    display: flex;
+}
+
+/* Table card full height */
+.right-column .card {
+    width: 100%;
+}
+
+/* Improve list spacing */
+.card ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.card ul li {
+    margin-bottom: 10px;
+}
+/* 🌙 FIX TABLE FOR LIGHT MODE */
+body.light-theme .analysis-table td {
+    color: #1e293b;
+}
+
+body.light-theme .analysis-table th {
+    background: #e0f2fe;
+    color: #1e293b;
+}
+
+body.light-theme .analysis-table tr {
+    border-bottom: 1px solid #cbd5e1;
+}
+body.light-theme .analysis-table tr:hover {
+    background: #f0f9ff;
+}
+body.light-theme .analysis-table tr:nth-child(even) {
+    background: #f8fafc;
+}

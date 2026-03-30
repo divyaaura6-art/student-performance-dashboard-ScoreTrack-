@@ -4,49 +4,53 @@
     <meta charset="UTF-8">
     <title>Attendance Analysis - Student Performance</title>
 
+    <!-- Fonts & CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Chart.js CDN -->
+    <!-- Theme JS -->
+    <script src="javascript/theme.js" defer></script>
+
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
-<script src="javascript/script.js"></script>
-<script src="javascript/theme.js" defer></script>
+
 <div class="container">
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
-    <div class="logo">
-        <h2>Student Dashboard</h2>
-    </div>
+        <div class="logo">
+            <h2>Student Dashboard</h2>
+        </div>
 
-    <div class="profile">
-        <img src="images/profile.avif" alt="Student">
-        <h3>Anita Sharma</h3>
-        <p>24BCE5040</p>
-    </div>
+        <div class="profile">
+            <img src="images/profile.avif" alt="Student">
+            <h3>Anita Sharma</h3>
+            <p>24BCE5040</p>
+        </div>
 
-    <nav class="menu">
-        <button onclick="openNewTab()">Dashboard</button>
-        <button onclick="openNewTab1()">Grade Analysis</button>
-        <button onclick="openNewTab2()">Attendance</button>
-        <button onclick="openNewTab3()">Hackathon Impact</button>
-        <button onclick="openNewTab4()">Certifications</button>
-        <button onclick="openNewTab5()">Skill Gap</button>
-        <button onclick="openNewTab6()">Career Recommendation</button>
-        <button onclick="openNewTab7()">Settings</button>
-    </nav>
-</aside>
+        <nav class="menu">
+            <button onclick="openNewTab()">Dashboard</button>
+            <button onclick="openNewTab1()">Grade Analysis</button>
+            <button onclick="openNewTab2()" class="active">Attendance</button>
+            <button onclick="openNewTab3()">Hackathon Impact</button>
+            <button onclick="openNewTab4()">Certifications</button>
+            <button onclick="openNewTab5()">Skill Gap</button>
+            <button onclick="openNewTab6()">Career Recommendation</button>
+            <button onclick="openNewTab7()">Settings</button>
+        </nav>
+    </aside>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN -->
     <main class="main-content">
 
         <!-- TOPBAR -->
         <header class="topbar">
             <div class="top-left">
                 <h1>Attendance Analysis</h1>
-                <p>Monitor attendance and its impact on performance</p>
+                <p>Simple overview of attendance performance</p>
             </div>
 
             <div class="top-right">
@@ -56,44 +60,71 @@
             </div>
         </header>
 
-        <!-- GRID -->
-        <section class="dashboard attendance-grid">
+        <!-- 🔥 STATS -->
+        <section class="dashboard stats-row">
 
-            <!-- OVERALL GAUGE -->
-            <div class="card">
-                <h2>Overall Attendance</h2>
-                <canvas id="overallGauge"></canvas>
-                <p id="num">91%</p>
+            <div class="card stat-card">
+                <h3>Overall Attendance</h3>
+                <h2>91%</h2>
+                <p>Above required threshold</p>
             </div>
 
-            <!-- SUBJECT GAUGE -->
-            <div class="card">
-                <h2>Subject Attendance</h2>
-
-                <select id="subjectSelect" class="dropdown">
-                    <option value="92">Data Structures - 92%</option>
-                    <option value="88">Web Technologies - 88%</option>
-                    <option value="62">Operating Systems - 62%</option>
-                    <option value="75">Computer Networks - 75%</option>
-                </select>
-
-                <canvas id="subjectGauge"></canvas>
-                <p id="attendanceWarning"></p>
+            <div class="card stat-card">
+                <h3>Lowest Subject</h3>
+                <h2>Operating Systems</h2>
+                <p style="color:#ef4444;">62%</p>
             </div>
 
-            <!-- TABLE -->
-            <div class="card large">
-                <h2>Subject-wise Attendance</h2>
-                <table class="analysis-table">
-                    <tr>
-                        <th>Subject</th>
-                        <th>Attendance (%)</th>
-                    </tr>
-                    <tr><td>Data Structures</td><td>92%</td></tr>
-                    <tr><td>Web Technologies</td><td>88%</td></tr>
-                    <tr><td>Operating Systems</td><td>62%</td></tr>
-                    <tr><td>Computer Networks</td><td>75%</td></tr>
-                </table>
+            <div class="card stat-card">
+                <h3>Risk Level</h3>
+                <h2 style="color:#f59e0b;">Moderate</h2>
+                <p>Needs improvement</p>
+            </div>
+
+        </section>
+
+        <!-- 🔥 MAIN CONTENT -->
+        <section class="attendance-layout">
+
+            <!-- LEFT SIDE -->
+            <div class="left-column">
+
+                <div class="card">
+                    <h2>Insights</h2>
+                    <ul>
+                        <li>📈 Strong performance in Data Structures</li>
+                        <li>⚠️ Operating Systems attendance is low</li>
+                        <li>📊 Maintain ≥75% to stay safe</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Warning</h2>
+                    <p style="color:#ef4444;">
+                        Your Operating Systems attendance is below 75%.
+                        Attend upcoming classes to avoid shortage.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="right-column">
+
+                <div class="card">
+                    <h2>Subject-wise Attendance</h2>
+                    <table class="analysis-table">
+                        <tr>
+                            <th>Subject</th>
+                            <th>Attendance (%)</th>
+                        </tr>
+                        <tr><td>Data Structures</td><td>92%</td></tr>
+                        <tr><td>Web Technologies</td><td>88%</td></tr>
+                        <tr><td>Operating Systems</td><td style="color:#ef4444;">62%</td></tr>
+                        <tr><td>Computer Networks</td><td>75%</td></tr>
+                    </table>
+                </div>
+
             </div>
 
         </section>
@@ -101,11 +132,8 @@
     </main>
 
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<!-- Link External JS -->
+<!-- Scripts (at bottom) -->
+<script src="javascript/script.js"></script>
 <script src="js/attendance.js"></script>
-
 </body>
 </html>
