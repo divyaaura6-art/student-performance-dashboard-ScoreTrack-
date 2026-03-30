@@ -17,16 +17,16 @@ fetch("components/sidebar.html")
 
 // ================= MODAL =================
 function openModal() {
-    const modal = document.getElementById("certModal"); // make sure this ID exists in HTML
+    const modal = document.getElementById("careerModal"); // make sure this ID exists in HTML
     if (modal) {
         modal.style.display = "flex";
     } else {
-        console.error("certModal not found");
+        console.error("careerModal not found");
     }
 }
 
 function closeModal() {
-    const modal = document.getElementById("certModal");
+    const modal = document.getElementById("careerModal");
     if (modal) {
         modal.style.display = "none";
     }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="javascript/theme.js" defer></script>
     <meta charset="UTF-8">
     <title>Dashboard - Student Performance</title>
 
@@ -49,7 +50,6 @@
 </style>
 </head>
 <body>
-    <script src="javascript/theme.js" defer></script>
 <div class="container">
 
     <aside class="sidebar">
@@ -181,39 +181,6 @@
     </div>
 </div>
 <script>
-const toggleBtn = document.getElementById("themeToggle");
-
-// Load theme on page load
-function loadTheme() {
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "light") {
-        document.body.classList.add("light-theme");
-    }
-
-    updateButton();
-}
-
-// Toggle theme
-toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light-theme");
-
-    const isLight = document.body.classList.contains("light-theme");
-
-    localStorage.setItem("theme", isLight ? "light" : "dark");
-
-    updateButton();
-});
-
-// Button text
-function updateButton() {
-    toggleBtn.innerText = document.body.classList.contains("light-theme")
-        ? "Calm Mode 🌙"
-        : "Energetic Mode ⚡";
-}
-
-// Run on load
-loadTheme();
 // OPEN MODAL
 function openModal() {
     document.getElementById("careerModal").style.display = "flex";

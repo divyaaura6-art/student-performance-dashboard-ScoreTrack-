@@ -433,44 +433,82 @@ body {
     border-radius: 8px;
     border: none;
 }
-/* 🌙 LIGHT / CALM THEME */
-.light-theme {
-    background: #f1f5f9; /* soft grey-blue */
+/* 🌊 CALM BLUE GRADIENT THEME */
+body.light-theme {
+    background: linear-gradient(180deg, #bfe9ff 0%, #eaf6ff 40%, #ffffff 100%) !important;
     color: #1e293b;
 }
 
 /* Sidebar */
-.light-theme .sidebar {
-    background: #e2e8f0;
+body.light-theme .sidebar {
+    background: linear-gradient(180deg, #cdeeff, #f0f9ff);
+    color: #1e293b;
 }
 
 /* Cards */
-.light-theme .card {
-    background: #ffffff;
+body.light-theme .card {
+    background: rgba(255, 255, 255, 0.9);
     color: #1e293b;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 25px rgba(0, 102, 204, 0.08);
+    backdrop-filter: blur(10px);
 }
 
 /* Topbar */
-.light-theme .topbar {
-    background: #ffffff;
+body.light-theme .topbar {
+    background: rgba(255, 255, 255, 0.85);
     color: #1e293b;
+    backdrop-filter: blur(10px);
 }
 
 /* Buttons */
-.light-theme .primary-btn {
-    background: #3b82f6;
+body.light-theme .primary-btn {
+    background: linear-gradient(135deg, #bae6fd, #7dd3fc, #38bdf8);
+    color: #0f172a;
+    border: none;
+}
+body.light-theme .primary-btn:hover {
+    background: linear-gradient(135deg, #7dd3fc, #38bdf8);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+    transform: translateY(-2px);
+}
+body.light-theme .primary-btn {
+    border-radius: 25px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Sidebar buttons */
+body.light-theme .menu button {
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    color: #1e293b;
+}
+
+/* Hover effect */
+body.light-theme .menu button:hover {
+    background: linear-gradient(90deg, #60a5fa, #3b82f6);
     color: white;
 }
 
 /* Progress bar */
-.light-theme .progress-bar {
-    background: #cbd5f5;
+body.light-theme .progress-bar {
+    background: #dbeafe;
 }
 
-.light-theme .progress {
-    background: #3b82f6;
+body.light-theme .progress {
+    background: linear-gradient(90deg, #60a5fa, #3b82f6);
 }
+
+/* Profile text */
+body.light-theme .profile p {
+    opacity: 1;
+    color: #64748b;
+}
+
+/* Smooth transitions */
 * {
     transition: all 0.3s ease;
+}
+body.light-theme .card:hover {
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.15);
 }

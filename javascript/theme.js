@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!toggleBtn) return;
 
         toggleBtn.innerText = document.body.classList.contains("light-theme")
-            ? "Calm Mode 🌙"
-            : "Energetic Mode ⚡";
+            ? "Dark Mode"
+            : "Light Mode";
     }
 
     if (toggleBtn) {
