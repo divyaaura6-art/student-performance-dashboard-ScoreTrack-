@@ -478,18 +478,30 @@ body.light-theme .primary-btn {
 }
 
 /* Sidebar buttons */
+/* 🌊 Sidebar buttons (calm sky style) */
 body.light-theme .menu button {
-    background: rgba(59, 130, 246, 0.08);
-    border: 1px solid rgba(59, 130, 246, 0.15);
+    background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+    border: 1px solid rgba(56, 189, 248, 0.2);
     color: #1e293b;
+    backdrop-filter: blur(8px);
 }
 
-/* Hover effect */
+/* ✨ Hover effect */
 body.light-theme .menu button:hover {
-    background: linear-gradient(90deg, #60a5fa, #3b82f6);
+    background: linear-gradient(135deg, #7dd3fc, #38bdf8);
     color: white;
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35);
+    transform: translateY(-2px) scale(1.02);
 }
-
+body.light-theme .menu button.active {
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: white;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+}
+body.light-theme .menu button {
+    border-radius: 14px;
+    font-weight: 500;
+}
 /* Progress bar */
 body.light-theme .progress-bar {
     background: #dbeafe;
