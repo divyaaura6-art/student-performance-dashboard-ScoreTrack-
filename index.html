@@ -49,7 +49,7 @@
 </style>
 </head>
 <body>
-<script src="javascript/script.js"></script>
+    <script src="javascript/theme.js" defer></script>
 <div class="container">
 
     <aside class="sidebar">
@@ -160,45 +160,77 @@
     </main>
 
 </div>
+<!-- POPUP MODAL -->
+<div id="careerModal" class="modal">
+    <div class="modal-content">
+        <!--<span class="close-btn">&times;</span>-->
+        <h2>Data Analyst Career</h2>
+        <p>
+            Based on your strengths in Data Structures and Web Technologies,
+            along with certifications in AI and ML, you are well-suited for a
+            Data Analyst role.
+        </p>
+
+        <ul>
+            <li>✔ Strong analytical thinking</li>
+            <li>✔ Good with data interpretation</li>
+            <li>✔ Recommended tools: Python, SQL, Power BI</li>
+        </ul>
+
+        <button class="primary-btn" onclick="closeModal()">Close</button>
+    </div>
+</div>
 <script>
-    const toggleBtn = document.getElementById("themeToggle");
+const toggleBtn = document.getElementById("themeToggle");
 
-// Load saved theme
-if (localStorage.getItem("theme") === "light") {
-    document.body.classList.add("light-theme");
+// Load theme on page load
+function loadTheme() {
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+    }
+
+    updateButton();
 }
 
+// Toggle theme
 toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("light-theme");
 
-    // Save preference
-    if (document.body.classList.contains("light-theme")) {
-        localStorage.setItem("theme", "light");
-    } else {
-        localStorage.setItem("theme", "dark");
-    }
-});
-function updateButton() {
-    if (document.body.classList.contains("light-theme")) {
-        toggleBtn.innerText = "Calm Mode 🌙";
-    } else {
-        toggleBtn.innerText = "Energetic Mode ⚡";
-    }
-}
+    const isLight = document.body.classList.contains("light-theme");
 
-updateButton();
+    localStorage.setItem("theme", isLight ? "light" : "dark");
 
-toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light-theme");
-    localStorage.setItem(
-        "theme",
-        document.body.classList.contains("light-theme") ? "light" : "dark"
-    );
     updateButton();
 });
-</script>
-<script>
 
+// Button text
+function updateButton() {
+    toggleBtn.innerText = document.body.classList.contains("light-theme")
+        ? "Calm Mode 🌙"
+        : "Energetic Mode ⚡";
+}
+
+// Run on load
+loadTheme();
+// OPEN MODAL
+function openModal() {
+    document.getElementById("careerModal").style.display = "flex";
+}
+
+// CLOSE MODAL
+function closeModal() {
+    document.getElementById("careerModal").style.display = "none";
+}
+
+// CLOSE WHEN CLICKING OUTSIDE
+window.addEventListener("click", function(e) {
+    const modal = document.getElementById("careerModal");
+    if (e.target === modal) {
+        closeModal();
+    }
+});
 const Auth = {
 
     init() {
@@ -240,44 +272,7 @@ const Auth = {
 };
 
 document.addEventListener("DOMContentLoaded", () => Auth.init());
-
-// OPEN MODAL
-function openModal() {
-    document.getElementById("careerModal").style.display = "flex";
-}
-
-// CLOSE MODAL
-function closeModal() {
-    document.getElementById("careerModal").style.display = "none";
-}
-
-// CLOSE WHEN CLICKING OUTSIDE
-window.addEventListener("click", function(e) {
-    const modal = document.getElementById("careerModal");
-    if (e.target === modal) {
-        closeModal();
-    }
-});
 </script>
-<!-- POPUP MODAL -->
-<div id="careerModal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <h2>Data Analyst Career</h2>
-        <p>
-            Based on your strengths in Data Structures and Web Technologies,
-            along with certifications in AI and ML, you are well-suited for a
-            Data Analyst role.
-        </p>
-
-        <ul>
-            <li>✔ Strong analytical thinking</li>
-            <li>✔ Good with data interpretation</li>
-            <li>✔ Recommended tools: Python, SQL, Power BI</li>
-        </ul>
-
-        <button class="primary-btn" onclick="closeModal()">Close</button>
-    </div>
-</div>
+<script src="javascript/script.js"></script>
 </body>
 </html>

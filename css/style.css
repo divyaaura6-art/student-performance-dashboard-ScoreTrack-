@@ -433,3 +433,44 @@ body {
     border-radius: 8px;
     border: none;
 }
+/* 🌙 LIGHT / CALM THEME */
+.light-theme {
+    background: #f1f5f9; /* soft grey-blue */
+    color: #1e293b;
+}
+
+/* Sidebar */
+.light-theme .sidebar {
+    background: #e2e8f0;
+}
+
+/* Cards */
+.light-theme .card {
+    background: #ffffff;
+    color: #1e293b;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Topbar */
+.light-theme .topbar {
+    background: #ffffff;
+    color: #1e293b;
+}
+
+/* Buttons */
+.light-theme .primary-btn {
+    background: #3b82f6;
+    color: white;
+}
+
+/* Progress bar */
+.light-theme .progress-bar {
+    background: #cbd5f5;
+}
+
+.light-theme .progress {
+    background: #3b82f6;
+}
+* {
+    transition: all 0.3s ease;
+}
