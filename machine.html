@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Learning</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+/* 🌿 Green Gradient Background */
+body {
+    background: linear-gradient(
+        135deg,
+        #0f2027 0%,
+        #2e8b57 50%,
+        #a8e6cf 100%
+    );
+}
+
+/* 🌿 Green Buttons */
+.primary-btn {
+    background: linear-gradient(90deg, #16a34a, #4ade80);
+    color: white;
+}
+
+.primary-btn:hover {
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+}
+
+/* 🌿 Cards (slightly green tint) */
+.card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+}
+
+/* 🌿 Modal tweak */
+.modal-content {
+    background: rgba(46, 139, 87, 0.3);
+}
+</style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" style="width:100%;">
+
+        <header class="topbar">
+            <div>
+                <h1>Machine Learning</h1>
+                <p>Introduction to one of the most in-demand skills</p>
+            </div>
+        </header>
+
+        <section class="dashboard">
+
+            <!-- INTRO -->
+            <div class="card">
+                <h2>What is Machine Learning?</h2>
+                <p>
+                    Machine Learning is a branch of artificial intelligence that allows systems 
+                    to learn from data and improve performance without being explicitly programmed.
+                </p>
+            </div>
+
+            <!-- TYPES -->
+            <div class="card">
+                <h2>Types of Machine Learning</h2>
+                <ul>
+                    <li>Supervised Learning (e.g., classification, regression)</li>
+                    <li>Unsupervised Learning (e.g., clustering)</li>
+                    <li>Reinforcement Learning (learning through rewards)</li>
+                </ul>
+            </div>
+
+            <!-- SKILLS -->
+            <div class="card">
+                <h2>Key Skills Required</h2>
+                <ul>
+                    <li>Python Programming</li>
+                    <li>Statistics & Probability</li>
+                    <li>Data Analysis (Pandas, NumPy)</li>
+                    <li>Libraries like Scikit-learn</li>
+                </ul>
+            </div>
+
+            <!-- APPLICATIONS -->
+            <div class="card">
+                <h2>Real-world Applications</h2>
+                <ul>
+                    <li>Recommendation Systems (Netflix, Amazon)</li>
+                    <li>Spam Detection</li>
+                    <li>Image & Speech Recognition</li>
+                    <li>Self-driving Cars</li>
+                </ul>
+            </div>
+
+            <!-- BUTTON -->
+            <div class="card" style="text-align:center;">
+                <h2>Start Your Learning Journey</h2>
+                <p>Take the first step towards becoming a Machine Learning expert 🚀</p>
+
+                <button class="primary-btn" onclick="showPopup()">Start Certification</button>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="modal">
+    <div class="modal-content">
+        <h2>Redirecting...</h2>
+        <p>You are being redirected to a certification platform.</p>
+
+        <button class="primary-btn" onclick="closePopup()">OK</button>
+    </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+function showPopup() {
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>

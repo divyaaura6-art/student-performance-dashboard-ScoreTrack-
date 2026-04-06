@@ -83,7 +83,8 @@
             </div>
 
             <div class="top-right">
-                <button class="primary-btn" onclick="openModal()">+ Add Certification</button>
+            <button class="primary-btn" onclick="openModal()">+ Add Certification</button>
+            <button class="danger-btn" onclick="clearCertifications()">Remove All</button>
             </div>
         </header>
 
@@ -155,6 +156,28 @@
 </div>
 
 <!-- SCRIPT -->
+ <script>
+function saveToLocalStorage() {
+    const certs = [];
+
+    document.querySelectorAll("#certList .card").forEach(card => {
+        const name = card.querySelector("h3").textContent;
+        const provider = card.querySelector("p:nth-child(2)").textContent.replace("Provider: ", "");
+        const statusText = card.querySelector("p:nth-child(3)").textContent;
+
+        let status = "Completed";
+        if (statusText.includes("Progress")) status = "In Progress";
+        if (statusText.includes("Planned")) status = "Planned";
+
+        const progressBar = card.querySelector(".progress");
+        const progress = progressBar ? progressBar.style.width.replace("%","") : 0;
+
+        certs.push({ name, provider, status, progress });
+    });
+
+    localStorage.setItem("certifications", JSON.stringify(certs));
+}
+</script>
 <script>
 let total = 0;
 let inProgress = 0;
@@ -211,10 +234,13 @@ function renderCertification(name, provider, status, progress=0) {
     card.className = "card";
 
     card.innerHTML = `
+    <div style="display:flex; justify-content:space-between; align-items:center;">
         <h3>${name}</h3>
-        <p>Provider: ${provider}</p>
-        <p>Status: ${statusText}</p>
-        ${progressBar}
+        <button class="danger-btn" onclick="deleteCertification(this)">✖</button>
+    </div>
+    <p>Provider: ${provider}</p>
+    <p>Status: ${statusText}</p>
+    ${progressBar}
     `;
 
     certList.appendChild(card);
@@ -238,6 +264,7 @@ function addCertification() {
     }
 
     renderCertification(name, provider, status, progress);
+    saveToLocalStorage();   // ✅ ADD THIS
     closeModal();
 }
 
@@ -249,16 +276,87 @@ function updateStats() {
 
 // 🔥 LOAD INITIAL DATA
 window.onload = () => {
-    initialCerts.forEach(cert => {
-        renderCertification(
-            cert.name,
-            cert.provider,
-            cert.status,
-            cert.progress || 0
-        );
-    });
-};
-</script>
+    const savedCerts = JSON.parse(localStorage.getItem("certifications"));
 
+    if (savedCerts && savedCerts.length > 0) {
+        savedCerts.forEach(cert => {
+            renderCertification(
+                cert.name,
+                cert.provider,
+                cert.status,
+                cert.progress || 0
+            );
+        });
+    } else {
+        initialCerts.forEach(cert => {
+            renderCertification(
+                cert.name,
+                cert.provider,
+                cert.status,
+                cert.progress || 0
+            );
+        });
+    }
+};
+function deleteCertification(button) {
+    const card = button.closest(".card");
+    const statusText = card.querySelector("p:nth-child(2)").textContent;
+
+    // Adjust counters
+    if (statusText.includes("Completed")) {
+        total--;
+    } else if (statusText.includes("Progress")) {
+        inProgress--;
+    } else {
+        planned--;
+    }
+
+    // Remove card
+    card.remove();
+
+    // Also remove from roadmap (optional simple reset)
+    document.getElementById("roadmapList").innerHTML = "";
+    total = 0;
+    inProgress = 0;
+    planned = 0;
+
+    // Recalculate everything
+    document.querySelectorAll("#certList .card").forEach(c => {
+        const text = c.innerText;
+
+        if (text.includes("Completed")) total++;
+        else if (text.includes("Progress")) inProgress++;
+        else planned++;
+
+        const name = c.querySelector("h3").textContent;
+        const li = document.createElement("li");
+
+        if (text.includes("Completed")) li.textContent = `✔ ${name} completed`;
+        else if (text.includes("Progress")) li.textContent = `⏳ Complete ${name}`;
+        else li.textContent = `📌 Start ${name}`;
+
+        document.getElementById("roadmapList").appendChild(li);
+    });
+
+    updateStats();
+    saveToLocalStorage(); // ✅ keep storage updated
+}
+function clearCertifications() {
+    if (!confirm("Are you sure you want to remove all certifications?")) return;
+
+    // Clear UI
+    document.getElementById("certList").innerHTML = "";
+    document.getElementById("roadmapList").innerHTML = "";
+
+    // Reset counters
+    total = 0;
+    inProgress = 0;
+    planned = 0;
+    updateStats();
+
+    // Clear local storage
+    localStorage.removeItem("certifications");
+}
+</script>
 </body>
 </html>

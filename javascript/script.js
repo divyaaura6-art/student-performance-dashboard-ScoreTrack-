@@ -123,3 +123,9 @@ function openNewTab6() {
 function openNewTab7() {
     window.open("settings.html", "_blank");
 }
+function logout() {
+    if (confirm("Are you sure you want to logout?")) {
+        localStorage.clear();   // clears saved data (optional but good)
+        window.location.href = "login.html"; // redirect to login page
+    }
+}

@@ -49,7 +49,7 @@
             <div class="top-right">
                 <div class="icon">🔔</div>
                 <div class="icon">🌙</div>
-                <button class="primary-btn">Logout</button>
+                <button class="primary-btn" onclick="logout()">Logout</button>
             </div>
         </header>
 
@@ -108,7 +108,7 @@
                     <tr>
                         <td>Data Structures</td>
                         <td>92</td>
-                        <td>A+</td>
+                        <td>S</td>
                     </tr>
                     <tr>
                         <td>Web Technologies</td>
@@ -117,8 +117,8 @@
                     </tr>
                     <tr>
                         <td>Operating Systems</td>
-                        <td>65</td>
-                        <td>C</td>
+                        <td>70</td>
+                        <td>A</td>
                     </tr>
                     <tr>
                         <td>Computer Networks</td>
@@ -129,23 +129,27 @@
             </div>
 
             <div class="card">
-                <h2>Performance Trend</h2>
-                <p>Trend visualization will be added later.</p>
+            <h2>Performance Trend</h2>
+            <canvas id="trendChart"></canvas>
             </div>
 
-            <div class="card">
-                <h2>Best Performing Subject</h2>
-                <p><strong>Data Structures</strong> – 92 Marks</p>
-            </div>
+            <div class="card center-text">
+    <h2>Best Performing Subject</h2>
+    <p><strong>Data Structures</strong></p>
+    <span class="subtext">92 Marks • Excellent performance</span>
+</div>
 
-            <div class="card">
-                <h2>Lowest Performing Subject</h2>
-                <p><strong>Operating Systems</strong> – 65 Marks</p>
-            </div>
+<div class="card center-text">
+    <h2>Needs Improvement</h2>
+    <p><strong>Operating Systems</strong></p>
+    <span class="subtext">65 Marks • Scope for growth</span>
+</div>
 
-            <div class="card">
-                <h2>Grade Distribution</h2>
-                <canvas id="gradeChart"></canvas>
+            <div class="card large-card center-card">
+            <h2>Grade Distribution</h2>
+            <div class="pie-container">
+            <canvas id="gradeChart"></canvas>
+            </div>
             </div>
 
         </section>
@@ -173,6 +177,71 @@ function animate(timestamp) {
 
 requestAnimationFrame(animate);
 </script>
+<script>
+const ctx = document.getElementById('trendChart').getContext('2d');
 
+const trendChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4'],
+        datasets: [{
+            label: 'GPA Trend',
+            data: [7.8, 8.0, 8.5, 8.7],
+            borderColor: '#4CAF50',
+            backgroundColor: 'rgba(76, 175, 80, 0.2)',
+            tension: 0.4,
+            fill: true,
+            pointRadius: 5,
+            pointBackgroundColor: '#4CAF50'
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true
+            }
+        },
+        scales: {
+            y: {
+                min: 7,
+                max: 9,
+                ticks: {
+                    stepSize: 0.5
+                }
+            }
+        }
+    }
+});
+</script>
+<script>
+const gradeCtx = document.getElementById('gradeChart').getContext('2d');
+
+const gradeChart = new Chart(gradeCtx, {
+    type: 'pie',
+    data: {
+        labels: ['Data Structures', 'Web Technologies', 'Operating Systems', 'Computer Networks'],
+        datasets: [{
+            label: 'Marks Distribution',
+            data: [92, 89, 70, 70],
+            backgroundColor: [
+                '#4CAF50',
+                '#2196F3',
+                '#FFC107',
+                '#F44336'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'bottom'
+            }
+        }
+    }
+});
+</script>
 </body>
 </html>

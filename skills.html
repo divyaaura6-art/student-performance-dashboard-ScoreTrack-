@@ -47,7 +47,7 @@
 
             <div class="top-right">
                 <div class="icon">📊</div>
-                <button class="primary-btn">Upgrade Plan</button>
+                <button class="primary-btn" onclick="openUpgradeModal()">Upgrade Plan</button>
             </div>
         </header>
 
@@ -136,8 +136,9 @@
                 <h3>Priority Focus</h3>
                 <h2>Machine Learning</h2>
                 <p>Largest gap detected (30%). Recommended immediate attention.</p>
-
-                <button class="primary-btn">Start Learning</button>
+                <button class="primary-btn" onclick="window.location.href='machine.html'">
+    Start Learning
+</button>
             </div>
 
         </section>
@@ -145,7 +146,51 @@
     </main>
 
 </div>
+<div id="upgradeModal" class="modal">
+    <div class="modal-content" style="width:350px;">
+        <h2>🚀 Upgrade Plan</h2>
+        <p style="margin:10px 0;">Unlock premium features:</p>
 
+        <ul style="margin:10px 0 15px 15px;">
+            <li>📊 Advanced skill analytics</li>
+            <li>🎯 Personalized learning roadmap</li>
+            <li>🤖 AI-based career recommendations</li>
+            <li>📚 Course suggestions (Udemy, Coursera)</li>
+            <li>📈 Progress tracking & insights</li>
+            <li>🏆 Certification tracking system</li>
+            <li>🔔 Smart reminders & alerts</li>
+        </ul>
+
+        <div style="display:flex; justify-content:space-between;">
+            <button class="primary-btn" onclick="goPremium()">Upgrade Now</button>
+            <button class="danger-btn" onclick="closeUpgradeModal()">Cancel</button>
+        </div>
+    </div>
+</div>
 <script src="javascript/script.js"></script>
+<script>
+function startLearning() {
+    window.open("https://www.udemy.com/courses/search/?q=machine+learning", "_blank");
+}
+
+function openUpgradeModal() {
+    document.getElementById("upgradeModal").style.display = "flex";
+}
+
+function closeUpgradeModal() {
+    document.getElementById("upgradeModal").style.display = "none";
+}
+
+function goPremium() {
+    alert("Redirecting to payment page 💳 (demo)");
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById("upgradeModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 </body>
 </html>

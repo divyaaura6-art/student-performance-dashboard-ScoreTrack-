@@ -227,7 +227,7 @@
             <div class="top-right">
                 <div class="icon">🔔</div>
                 <div class="icon">🌙</div>
-                <button class="primary-btn">Logout</button>
+                <button class="primary-btn" onclick="logout()">Logout</button>
             </div>
         </header>
 
@@ -237,7 +237,7 @@
                 <h3>Primary Career Path</h3>
                 <h2 style="font-size:32px; margin-bottom:10px;">Data Analyst</h2>
                 <p>Strong analytical GPA and certification alignment in AI & ML indicate high potential in data-driven roles.</p>
-                <button class="primary-btn">Explore Roadmap</button>
+                <button class="primary-btn" onclick="exploreRoadmap()">Explore Roadmap</button>
             </div>
 
             <div class="card">
@@ -281,7 +281,7 @@
                     <div class="progress" style="width:75%;"></div>
                 </div>
 
-                <button class="primary-btn">Improve Skills</button>
+                <button class="primary-btn" onclick="improveSkills()">Improve Skills</button>
             </div>
 
         </section>
@@ -289,6 +289,32 @@
     </main>
 
 </div>
+<script>
+function exploreRoadmap() {
+    alert(
+`📊 Data Analyst Roadmap:
+
+1. Learn SQL (Joins, Queries)
+2. Master Excel & Data Cleaning
+3. Learn Python (Pandas, NumPy)
+4. Data Visualization (Power BI / Tableau)
+5. Build Projects (Dashboards)
+6. Practice Case Studies
+
+🚀 Tip: Start with SQL + Excel first!`
+    );
+}
+
+function improveSkills() {
+    window.location.href = "improve-skills.html";
+}
+
+function logout() {
+    if (confirm("Are you sure you want to logout?")) {
+        window.location.href = "login.html"; // change if needed
+    }
+}
+</script>
 
 </body>
 </html>

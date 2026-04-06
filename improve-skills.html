@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Improve Skills</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- 🌿 GREEN THEME -->
+    <style>
+    /* Override dashboard layout for this page */
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 equal columns */
+    gap: 25px;
+}
+
+/* Make cards fill full height nicely */
+.card {
+    height: 100%;
+}
+    body {
+        background: linear-gradient(135deg, #0f2027, #2e8b57, #a8e6cf);
+    }
+
+    .primary-btn {
+        background: linear-gradient(90deg, #16a34a, #4ade80);
+        color: white;
+    }
+
+    .primary-btn:hover {
+        box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+    }
+
+    .modal-content {
+        background: rgba(46, 139, 87, 0.3);
+    }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+<main class="main-content" style="width:100%;">
+
+<header class="topbar">
+    <h1>Skill Improvement Hub</h1>
+    <p>Focus on your weakest areas to grow 🚀</p>
+</header>
+
+<section class="dashboard">
+
+<!-- MACHINE LEARNING -->
+<div class="card">
+    <h2>Machine Learning</h2>
+    <p>
+        Machine Learning enables systems to learn from data and make predictions.
+        It is widely used in AI, recommendation systems, and automation.
+    </p>
+
+    <h3>Key Skills</h3>
+    <ul>
+        <li>Python (NumPy, Pandas)</li>
+        <li>Statistics & Probability</li>
+        <li>Scikit-learn</li>
+    </ul>
+
+    <button class="primary-btn" onclick="showPopup('Machine Learning')">
+        Start Learning
+    </button>
+</div>
+
+<!-- ADVANCED SQL -->
+<div class="card">
+    <h2>Advanced SQL</h2>
+    <p>
+        Advanced SQL helps in analyzing large datasets, optimizing queries,
+        and building efficient database systems.
+    </p>
+
+    <h3>Key Topics</h3>
+    <ul>
+        <li>Joins (Inner, Outer, Self)</li>
+        <li>Subqueries & Nested Queries</li>
+        <li>Window Functions</li>
+        <li>Indexes & Optimization</li>
+    </ul>
+
+    <button class="primary-btn" onclick="showPopup('Advanced SQL')">
+        Start Learning
+    </button>
+</div>
+
+</section>
+</main>
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="modal">
+    <div class="modal-content">
+        <h2 id="popupTitle">Redirecting...</h2>
+        <p id="popupText"></p>
+
+        <button class="primary-btn" onclick="closePopup()">OK</button>
+    </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+function showPopup(skill) {
+    document.getElementById("popup").style.display = "flex";
+    document.getElementById("popupTitle").innerText = "Redirecting...";
+    document.getElementById("popupText").innerText =
+        "Opening " + skill + " certification resources.";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
